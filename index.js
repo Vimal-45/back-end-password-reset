@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 dbConnect()
-app.get('/', (req, res) => { 'The password reset App is working' })
+app.get('/', (req, res) => { res.send('The password reset App is working') })
 
 app.use('/api/user',router)
 
