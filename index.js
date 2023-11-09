@@ -12,6 +12,11 @@ const PORT = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Internal Server Error', message: err.message });
+});
+
 
 dbConnect()
 app.get('/', (req, res) => { res.send('The password reset App is working') })
