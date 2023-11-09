@@ -12,9 +12,13 @@ const PORT = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
-app.use('/api/user',router)
+
 dbConnect()
+app.get('/', (req, res) => { 'The password reset App is working' })
+
+app.use('/api/user',router)
 
 app.listen(PORT,()=>{
-    console.log('The app is listening with PORT:',PORT);
+    console.log('The app is listening with PORT:',PORT); 
+     
 })
