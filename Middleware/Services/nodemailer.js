@@ -32,7 +32,7 @@ export const emailSender = async (req, res) => {
         await User.updateOne({email:email},{string:randomString})
 
               
-        const resetLink = `http://localhost:3000/reset/${randomString}`;    
+        const resetLink = `https://password-reset-5gb9.onrender.com/${randomString}`;    
 
         const emailDetails = {
             from: "vimalfsd@gmail.com",
