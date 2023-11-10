@@ -15,11 +15,12 @@ export const emailSender = async (req, res) => {
         service: 'Gmail',
         auth: {
             user: "vimalfsd@gmail.com",
-            pass: 'gcoy doxc ahzr kqon',
+            pass: 'gcoydoxcahzrkqon',
         },
     });
 
     const { email } = req.body;
+    console.log(req.body, "hello");
     try {
         const user = await User.findOne({ email });
         if (!user) {
