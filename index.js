@@ -18,7 +18,7 @@ app.use((err, req, res, next) => {
 });
 
 
-dbConnect()
+dbConnect().then(()=>{console.log('DB connected')}).catch(err=>console.log(err))
 app.get('/', (req, res) => { res.send('The password reset App is working') })
 
 app.use('/api/user',router)
