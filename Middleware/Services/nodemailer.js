@@ -32,7 +32,7 @@ export const emailSender = async (req, res) => {
         await User.updateOne({email:email},{string:randomString})
 
               
-        const resetLink = `https://password-reset-peach.vercel.app/reset/${randomString}`;    
+        const resetLink = `https://password-reset-peach.vercel.app/reset?string=${randomString}`;    
 
         const emailDetails = {
             from: "vimalfsd@gmail.com",
